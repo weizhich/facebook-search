@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FB Search</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link href="css/mystyle.css" rel="stylesheet">
+    </head>
+    <body onload="load()">
+        <header class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <p class="col-xs-12 col-sm-3" style="margin-top: 8px;">FB Search</p>
+                    <hr class="col-xs-12" id="firsthr"/>
+                    <div class="col-xs-12 col-sm-8" style="height:48px">
+                        <form class="form-horizontal" id="searchForm" role="form">
+                            <div class="form-group">
+                                <div class="col-xs-8 col-sm-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-lg" id="searchInput" name="searchInput" placeholder="type something..." data-toggle="tooltip" data-placement="bottom" title="please type a keyword" onmouseover="destroyTool()">
+                                        <div class="input-group-addon">
+                                            <button type="submit" class="btn btn-primary btn-lg" id="searchButton" onclick="searchJSON()">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-sm-2">
+                                    <button type="reset" class="btn btn-default btn-lg" onclick="clearField()">Clear</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="jumbotron" id="navjum">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                  <li class="active" data-toggle="tab"><a href="javascript:void(0);" onclick="change(this)" id='usera'>Users</a></li>
+                  <li data-toggle="tab"><a href="javascript:void(0);" onclick="change(this)">Pages</a></li>
+                  <li data-toggle="tab"><a href="javascript:void(0);" onclick="change(this)">Events</a></li>
+                  <li data-toggle="tab"><a href="javascript:void(0);" onclick="change(this)">Places</a></li>
+                  <li data-toggle="tab"><a href="javascript:void(0);" onclick="change(this)">Groups</a></li>
+                  <li data-toggle="tab"><a href="javascript:void(0);" onclick="change(this)">Favorites</a></li>
+            </ul>
+        </div>
+        
+        <div ng-controller="myController">
+            <div id='outerdiv'>
+                <div class="page1" ng-show="checkPage1">
+                    <div id='testdiv' class="container"></div>
+                    <div class="progress" id='proMain'>
+                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="sr-only">50% Complete</span>
+                      </div>
+                    </div>
+                </div>
+                <div class="page2" ng-show="checkPage2">
+                    <div id='testdiv2' class="container">
+                        <div class="col-xs-12 col-sm-12" style='margin-bottom: 20px;'>
+                            <p style='margin:0 auto; text-align:right;' id='testp'>
+                                <button type='button' class='btn btn-default' id='backBtn' onclick='backPage1()' style='border-radius:6px !important;'>
+                                <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>Back</button>
+                                <button type='button' class='btn btn-default' id='detailFav' style='border-radius:6px !important;'>
+                                    
+                                </button>
+                                <button type='button' class='btn btn-default' id='detailFB' style='border-radius:6px !important;'>
+                                    <img src='img/facebook.png' style='width:23px;height:23px;'/>
+                                </button>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Albums
+                                </div>
+                                <div class="panel-body" id='albumsBody'>
+                                    <div id='albumsList'>
+                                    
+                                    </div>
+                                    <div class="progress" id='proAlbums'>
+                                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                        <span class="sr-only">50% Complete</span>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Posts
+                                </div>
+                                <div class="panel-body" id='postsBody'>
+                                    <div id='postsList'>
+                                        
+                                    </div>
+                                    <div class="progress" id='proPosts'>
+                                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                        <span class="sr-only">50% Complete</span>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div id='testdiv' class="container"></div> -->
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-animate.min.js"></script>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
+        <script src="js/my-script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+body{
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+*{
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+#searchButton{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding: 10px 45px;
+}
+@media (max-width: 767px) {
+  #searchButton{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding: 10px 15px;
+  }
+}
+#firsthr {
+    display: none;
+}
+@media (max-width: 767px) {
+  #firsthr {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 9px;
+    padding: 0.3px;
+    background-color: #e1e1e1;
+    margin-bottom: 10px;
+    display: inline;
+      
+  }
+}
+#navjum{
+    padding: 0;
+    border: 0;
+}
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 1.5px #e1e1e1;
+  border-top: solid 1.5px #e1e1e1;
+  margin-bottom: 0;
+}
+.jumbotron p {
+  margin-bottom: 0px;
+  color: #50649b;  
+}
+.input-group-addon:last-child {
+    padding: 0;
+}
+.nav-tabs.nav-justified > li.active > a,
+.nav-tabs.nav-justified > li.active > a:hover,
+.nav-tabs.nav-justified > li.active > a:focus {
+  color: white;
+  cursor: default;
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+  border-bottom-color: transparent;
+}
+.nav-tabs.nav-justified > li {
+    width: 16.666667%;
+    text-align: center;
+    float: left;
+}
+@media (max-width: 767px) {
+    .nav-tabs.nav-justified > li {
+        width: 100%;
+        text-align: center;
+        float: left;
+        margin-bottom: -5px;
+    }
+    .nav-tabs.nav-justified > li > a{
+        color: black;
+        padding: 0;
+    }
+}
+.nav-tabs.nav-justified > li > a{
+    color: black;
+}
+.nav-tabs.nav-justified{
+    border-bottom: solid 2px #3b5998;
+}
+#proMain{
+    width: 80%;
+    display: none;
+    margin: 150px auto;
+    border-radius: 5px !important;
+}
+#proAlbums{
+    margin-top: 17px;
+    display: none;
+    border-radius: 5px !important;
+}
+#proPosts{
+    margin-top: 17px;
+    display: none;
+    border-radius: 5px !important;
+}
+@media (max-width: 767px) {
+    #proMain{
+        width: 80%;
+        margin: 80px auto;
+        border-radius: 5px !important;
+    }
+}
+#testdiv{
+    margin-top: 15px;
+    width: 100%
+}
+#testdiv2{
+    margin-top: 15px;
+    width: 100%;
+    visibility: hidden;
+}
+.img-circle {
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
+}
+.glyphicon-star{
+    color: #ffd700;
+}
+#nextBtn{
+    border-radius: 6px !important;
+    margin-left: 35px;
+    margin-right: 35px;
+    width: 90px;
+}
+#previousBtn{
+    border-radius: 6px !important;
+    margin-left: 35px;
+    margin-right: 35px;
+    width: 90px;  
+}
+@media (max-width: 767px) {
+    #mainTab{
+        display: -moz-box;
+    }
+    #scrolldiv{
+        overflow: scroll;
+        border: solid 1.5px #dddddd;
+    }
+}
+@media (max-width:767px){
+    .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #ddd;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    }
+}
+#outerdiv{
+    width: 100%;
+}
+.page1.ng-hide {
+  left: 100%;
+}
+.page1.ng-hide-remove{
+  transition: all linear 0.5s;
+}
+.page1 {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  left: 0;
+}
+
+.page2.ng-hide {
+  left: -100%;
+}
+.page2.ng-hide-remove{
+  transition: all linear 0.5s;
+}
+.page2{
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  left: 0;
+}
+#detailFav{
+    visibility: hidden;
+}
+#detailFB{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+    visibility: hidden;
+}
+#backBtn{
+    float: left;
+}
+.panel-default{
+    border-radius:6px !important;
+}
+.panel-heading{
+    border-top-right-radius: 6px !important;
+    border-top-left-radius: 6px !important;
+}
+#noData{
+    margin: 0;
+    padding: 10px;
+    background-color: #fcf8e3;
+    border-radius: 10px !important;
+    color: #9f926f;
+}
+.panel-title > a:hover,
+.panel-title > a:focus{
+    color:#337ab7;  
+}
+.pContent{
+    margin-left: 70px;
+}
+.pText{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.dateP{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #84848a;
+}
+.tooltip-inner{
+    border-radius: 6px !important;
+}
